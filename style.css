@@ -283,7 +283,7 @@ article,
   padding: 4.5rem 5rem;
   border-radius: var(--radius-xl);
   background: url("/assets/images/bg4.jpg");
-  background: url("./assets/images/bg4.jpg")
+  background: url("./assets/images/bg4.jpg");
 }
 
 .home__title {
@@ -1031,6 +1031,7 @@ body:has(#themeToggle:checked) {
   }
 
 }
+
 
 
 
