@@ -70,7 +70,7 @@ const skills = [
 ]
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)`n  const baseUrl = import.meta.env.BASE_URL`n  const profileSrc = baseUrl + "assets/images/profile1.png"`n  const heroBg = baseUrl + "assets/images/bg4.jpg"`n  const resumeUrl = baseUrl + "assets/Pdf/Jai_Resume.pdf"
 
   useEffect(() => {
     const elements = document.querySelectorAll("[data-reveal]")
@@ -139,7 +139,7 @@ function App() {
           </div>
 
           <div className="nav-cta">
-            <a className="btn btn-ghost" href="/assets/Pdf/Jai_Resume.pdf" download>
+            <a className="btn btn-ghost" href={resumeUrl} download>
               Download CV
             </a>
           </div>
@@ -147,7 +147,7 @@ function App() {
       </header>
 
       <main>
-        <section id="home" className="hero" data-reveal>
+        <section id="home" className="hero" data-reveal style={{ "--hero-bg": "url(" + heroBg + ")" }}>
           <div className="hero-text">
             <div className="badge">Available for full-stack roles</div>
             <h1>
@@ -186,7 +186,7 @@ function App() {
           </div>
 
           <div className="hero-card" data-reveal>
-            <img src="/assets/images/profile1.png" alt="Portrait of Jai Mehta" className="hero-image" />
+            <img src={profileSrc} alt="Portrait of Jai Mehta" className="hero-image" />
             <div className="hero-card-body">
               <h2>Jai Mehta</h2>
               <p>Full-Stack Engineer | UI-first mindset</p>
@@ -368,3 +368,4 @@ function App() {
 }
 
 export default App
+
