@@ -5,7 +5,7 @@ import { revealUp, staggerChildren } from '../animations/variants'
 import { socialLinks } from '../data/socials'
 
 const words = ['Creative', 'Systematic', 'Scalable', 'Performance-first']
-const profileSrc = '/assets/images/profile1.png'
+const profileSrc = `${import.meta.env.BASE_URL}assets/images/profile1.png`
 
 export default function HeroSection() {
   const [idx, setIdx] = useState(0)
@@ -127,3 +127,4 @@ export default function HeroSection() {
     </section>
   )
 }
+
