@@ -2,16 +2,10 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import MagneticButton from '../components/MagneticButton'
 import { revealUp, staggerChildren } from '../animations/variants'
+import { socialLinks } from '../data/socials'
 
 const words = ['Creative', 'Systematic', 'Scalable', 'Performance-first']
 const profileSrc = '/assets/images/profile1.png'
-
-const socials = [
-  { label: 'GitHub', href: 'https://github.com/' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-  { label: 'X', href: 'https://x.com/' },
-  { label: 'Instagram', href: 'https://www.instagram.com/' },
-]
 
 export default function HeroSection() {
   const [idx, setIdx] = useState(0)
@@ -97,8 +91,11 @@ export default function HeroSection() {
                   alt="Jai Mehta profile"
                   onError={() => setImageFailed(true)}
                   className="profile-image"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
+                  fetchPriority="low"
+                  width={960}
+                  height={1200}
                 />
               ) : (
                 <div className="profile-fallback">
@@ -111,7 +108,7 @@ export default function HeroSection() {
               <p className="text-3xl font-semibold tracking-tight">Jai Mehta</p>
               <p className="mt-2 text-base text-muted">Full-Stack Developer | UI Engineer</p>
               <div className="mt-4 flex flex-wrap gap-2">
-                {socials.map((social) => (
+                {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
@@ -130,4 +127,3 @@ export default function HeroSection() {
     </section>
   )
 }
-

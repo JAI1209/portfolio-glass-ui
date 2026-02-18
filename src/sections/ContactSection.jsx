@@ -1,12 +1,6 @@
 import { motion } from 'framer-motion'
 import MagneticButton from '../components/MagneticButton'
-
-const socials = [
-  { label: 'GitHub', href: 'https://github.com/' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-  { label: 'X', href: 'https://x.com/' },
-  { label: 'Instagram', href: 'https://www.instagram.com/' },
-]
+import { socialLinks } from '../data/socials'
 
 export default function ContactSection() {
   return (
@@ -16,7 +10,7 @@ export default function ContactSection() {
         <h2 className="section-title max-w-3xl">Let us build products that move people.</h2>
 
         <div className="mt-6 flex flex-wrap gap-2">
-          {socials.map((social) => (
+          {socialLinks.map((social) => (
             <a
               key={social.label}
               href={social.href}
